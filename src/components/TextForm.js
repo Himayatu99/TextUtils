@@ -60,8 +60,12 @@ const TextForm = (props) => {
                 <p className='py-5'>{text}</p>
             </div>
 
-            <div>
-                <img src='' alt='Pending...' />
+            <div className='text-center'>
+                <img src='./Icon/himayt.jpg' alt='Pending...'
+                    class="rounded-full w-32 mb-4 mx-auto"
+                />
+                <h1 className='font-mono font-medium py-2'>Himayat khan</h1>
+                <p className='font-serif  text-gray-600'>Web designer</p>
             </div>
 
         </>

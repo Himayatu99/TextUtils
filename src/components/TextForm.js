@@ -47,15 +47,17 @@ const TextForm = (props) => {
             </div>
             <div className=' text-center '>
                 <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600' onClick={headleClick}>Convert to uppercase</button>
-                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600' onClick={headlToLower}>To lower Caser</button>
-                <button className='border-2 rounded-lg bg-red-600 text-white px-4 py-2 hover:bg-green-600' onClick={headleClean}>Clear</button>
-                <button className='border-2 rounded-lg bg-red-600 text-white px-4 py-2 hover:bg-green-600' onClick={headleCopy}>Copy</button>
-                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-500' onClick={headleRemove}>Remove spaces</button>
+                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headlToLower}>To lower Caser</button>
+                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleClean}>Clear</button>
+                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleCopy}>Copy</button>
+                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleRemove}>Remove spaces</button>
             </div>
-            <div className='justify-center '>
-                <p>{text.split(" ").length} Words and  {text.length} charactres</p>
-                <h2> preview</h2>
-                <p>{text}</p>
+            <div className='text-center py-5'>
+                <p className='font-bold font-serif py-5'>{text.split(" ").length} Words and  {text.length} charactres</p>
+                <p className='font-bold font-mono'>You can read this artical on {0.008 * text.length} Mintues  </p>
+                <hr />
+                <h2 className='font-bold py-5 border-2 rounded-lg bg-black text-white outline-2' > Preview</h2>
+                <p className='py-5'>{text}</p>
             </div>
 
         </>

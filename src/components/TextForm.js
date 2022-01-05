@@ -60,6 +60,10 @@ const TextForm = (props) => {
                 <p className='py-5'>{text}</p>
             </div>
 
+            <div>
+                <img src='' alt='Pending...' />
+            </div>
+
         </>
     )
 }

@@ -5,6 +5,7 @@ const TextForm = (props) => {
     const headleClick = () => {
         const toUpper = text.toUpperCase()
         setText(toUpper)
+        props.hellAlert("Convert to UpperCase")
     }
     const headleChange = (r) => {
         setText(r.target.value)
@@ -12,15 +13,18 @@ const TextForm = (props) => {
     const headlToLower = () => {
         const toLower = text.toLowerCase();
         setText(toLower)
+        props.hellAlert("Convert to lower Case")
     }
     const headleClean = () => {
         const Clear = ("")
         setText(Clear)
+        props.hellAlert("Clear successfuly")
     }
     const headleCopy = () => {
         const copy = document.getElementById('mycopy');
         copy.select();
         navigator.clipboard.writeText(copy.value)
+        props.hellAlert("Copy text")
     }
     const headleRemove = () => {
         const extraSpaces = text.split(/[ ]+/)

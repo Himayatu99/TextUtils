@@ -1,17 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = (props) => {
     return (
         <>
             <nav className={`bg-${props.mode_mode} text-orange-500 flex justify-between `}>
 
-                <h1 className='font-bold pt-5 px-5'>TEXTUTIL</h1>
+                <Link to='/'><h1 className='font-bold pt-5 px-5'>TEXTUTILs</h1></Link>
 
                 {/* <img src="/Icon/1.jpg" alt='404' classNameName='h-14 pt-3 px-3 rounded-2xl ' /> */}
                 <ul className='flex cursor-pointer justify-end px-28 py-5 space-x-10 '>
-                    <li ><a href='/'>Home</a></li>
-                    <li ><a href='/'>About</a></li>
-                    <li ><a href='/'>Conact Us</a></li>
+                    <li ><Link to='/'>Home</Link></li>
+                    <li ><Link to='/about'>About</Link></li>
+                    <li ><Link to='/conact'>Conact Us</Link></li>
                 </ul>
 
             </nav>

@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import Alert from './Alert';
-// import About from './About'
+import About from './About'
 import NavBar from './NavBar'
 import TextForm from './TextForm'
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router-dom";
 const App = () => {
     const [mode, setMode] = useState('black');
     const [alert, setAlert] = useState(null)
@@ -30,15 +35,21 @@ const App = () => {
     return (
         <>
 
-            <div>
-                <NavBar mode_mode={mode} />
-                <Alert alert={alert} />
-                <TextForm hellAlert={showAlert} heading={" Enter the text to analyze below "} toggleMode={toggleMode} />
+            <Router>
+                <div>
+                    <NavBar mode_mode={mode} />
+                    <Alert alert={alert} />
+                    <Routes>
+                        <Route exact path="/about" element={<About />}>
 
-            </div>
-            {/* <div className="accordion" id="accordionExample">
-                <About />
-            </div> */}
+                        </Route>
+                        <Route exact path="/" element={<TextForm hellAlert={showAlert} heading={" Enter the text to analyze below "} toggleMode={toggleMode} />}>
+
+                        </Route>
+                    </Routes>
+                </div>
+
+            </Router>
         </>
     )
 }

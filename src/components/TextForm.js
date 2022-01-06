@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const TextForm = (props) => {
-    const [text, setText] = useState('Write some thing');
+    const [text, setText] = useState('');
     const headleClick = () => {
         const toUpper = text.toUpperCase()
         setText(toUpper)
@@ -28,7 +28,7 @@ const TextForm = (props) => {
     }
     return (
         <>
-            <div className="flex justify-center pt-10">
+            <div className="flex justify-center  pt-10 " >
                 <div className="mb-3 xl:w-96">
                     <label className="form-label inline-block mb-2 text-gray-700 font-bold text-2xl">
                         {props.heading}</label>
@@ -43,6 +43,7 @@ const TextForm = (props) => {
                     transition
                     ease-in-out
                     m-0  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" rows="10"></textarea>
+
                 </div>
             </div>
             <div className=' text-center '>
@@ -55,9 +56,9 @@ const TextForm = (props) => {
             <div className='text-center py-5'>
                 <p className='font-bold font-serif py-5'>{text.split(" ").length} Words and  {text.length} charactres</p>
                 <p className='font-bold font-mono'>You can read this artical on {0.008 * text.length} Mintues  </p>
-                <hr />
-                <h2 className='font-bold py-5 border-2 rounded-lg bg-black text-white outline-2' > Preview</h2>
-                <p className='py-5'>{text}</p>
+                <h2 className='capitalize text-3xl font-serif font-bold mt-10 mb-2 ' > Preview</h2>
+                <hr className='w-1/5 mx-auto' />
+                <p className='py-5'>{text.length > 0 ? text : "Enter something to reivew it here"}</p>
             </div>
 
             <div className='text-center'>
@@ -67,6 +68,7 @@ const TextForm = (props) => {
                 <h1 className='font-mono font-medium py-2'>Himayat khan</h1>
                 <p className='font-serif  text-gray-600'>Web designer</p>
             </div>
+            <button className='font-bold  hover:bg-green-600' onClick={props.toggleMode}>Enable mode </button>
 
         </>
     )

@@ -43,7 +43,7 @@ const App = () => {
                         <Route exact path="/about" element={<About />}>
 
                         </Route>
-                        <Route exact path="/" element={<TextForm hellAlert={showAlert} heading={" Enter the text to analyze below "} toggleMode={toggleMode} />}>
+                        <Route exact path="/" element={<TextForm hellAlert={showAlert} heading={"TextUtils- Word Count "} toggleMode={toggleMode} />}>
 
                         </Route>
                     </Routes>

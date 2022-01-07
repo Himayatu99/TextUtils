@@ -23,7 +23,8 @@ const TextForm = (props) => {
     const headleCopy = () => {
         const copy = document.getElementById('mycopy');
         copy.select();
-        navigator.clipboard.writeText(copy.value)
+        navigator.clipboard.writeText(copy.value);
+        document.getSelection().removeAllRanges();
         props.hellAlert("Copy text")
     }
     const headleRemove = () => {
@@ -33,8 +34,8 @@ const TextForm = (props) => {
     return (
         <>
             <div className="flex justify-center  pt-10 " >
-                <div className="mb-3 xl:w-96">
-                    <label className="form-label inline-block mb-2 text-gray-700 font-bold text-2xl">
+                <div className="mb-3 w-96">
+                    <label className=" inline-block mb-5 text-gray-700 font-bold text-2xl ">
                         {props.heading}</label>
                     <textarea value={text} onChange={headleChange} id="mycopy" className="form-control block w-full px-3
                     py-1.5
@@ -51,14 +52,14 @@ const TextForm = (props) => {
                 </div>
             </div>
             <div className=' text-center '>
-                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600' onClick={headleClick}>Convert to uppercase</button>
-                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headlToLower}>To lower Caser</button>
-                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleClean}>Clear</button>
-                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleCopy}>Copy</button>
-                <button className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleRemove}>Remove spaces</button>
+                <button disabled={text.length === 0} className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600' onClick={headleClick}>Convert to uppercase</button>
+                <button disabled={text.length === 0} className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headlToLower}>To lower Caser</button>
+                <button disabled={text.length === 0} className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleClean}>Clear</button>
+                <button disabled={text.length === 0} className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleCopy}>Copy</button>
+                <button disabled={text.length === 0} className='border-2 rounded-lg bg-red-700 text-white px-4 py-2 hover:bg-green-600 cursor-pointer' onClick={headleRemove}>Remove spaces</button>
             </div>
             <div className='text-center py-5'>
-                <p className='font-bold font-serif py-5'>{text.split(" ").length} Words and  {text.length} charactres</p>
+                <p className='font-bold font-serif py-5'>{text.split(" ").filter((element) => { return element.length !== 0 }).length} Words and  {text.length} charactres</p>
                 <p className='font-bold font-mono'>You can read this artical on {0.008 * text.length} Mintues  </p>
                 <h2 className='capitalize text-3xl font-serif font-bold mt-10 mb-2 ' > Preview</h2>
                 <hr className='w-1/5 mx-auto' />

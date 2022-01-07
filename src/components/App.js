@@ -8,6 +8,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+import Contact from './contact';
 const App = () => {
     const [mode, setMode] = useState('black');
     const [alert, setAlert] = useState(null)
@@ -44,6 +45,9 @@ const App = () => {
 
                         </Route>
                         <Route exact path="/" element={<TextForm hellAlert={showAlert} heading={"TextUtils- Word Count "} toggleMode={toggleMode} />}>
+
+                        </Route>
+                        <Route path="/contact" element={<Contact />}>
 
                         </Route>
                     </Routes>

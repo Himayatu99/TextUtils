@@ -12,7 +12,7 @@ const NavBar = (props) => {
                 <ul className='flex cursor-pointer justify-end px-28 py-5 space-x-10 '>
                     <li ><Link to='/'>Home</Link></li>
                     <li ><Link to='/about'>About</Link></li>
-                    <li ><Link to='/conact'>Conact Us</Link></li>
+                    <li ><Link to='/contact'>Contact Us</Link></li>
                 </ul>
 
             </nav>
